@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Two Text Diff</title>
+    <link
+      rel="icon"
+      href="https://projedefteri.com/favicon/open-source/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://projedefteri.com/favicon/open-source/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://projedefteri.com/favicon/open-source/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://projedefteri.com/favicon/open-source/apple-touch-icon.png"
+    />
+    <link
+      rel="mask-icon"
+      href="https://projedefteri.com/favicon/open-source/apple-touch-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"
+    ></script>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 theme-dark">
+    <header>
+      <h1
+        class="text-3xl font-bold text-center top-0 right-0 m-4"
+        style="filter: drop-shadow(0 0 4px #f7fafca9)"
+      >
+        Two Text Diff
+      </h1>
+      <button
+        class="absolute top-0 right-0 m-4 focus:outline-none"
+        style="filter: drop-shadow(0 0 5px #f7fafca9)"
+        id="theme-toggle-button"
+        onclick="toggleTheme()"
+      ></button>
+    </header>
+
+    <div class="container mx-auto py-10">
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-xs font-bold mb-2"
+            for="text1"
+            style="filter: drop-shadow(0 0 5px #f7fafca9)"
+            >Text 1</label
+          >
+          <textarea
+            class="bg-gray-200 appearance-none block w-full bg-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
+            id="text1"
+            rows="7"
+          ></textarea>
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-xs font-bold mb-2"
+            for="text2"
+            style="filter: drop-shadow(0 0 5px #f7fafca9)"
+            >Text 2</label
+          >
+          <textarea
+            class="bg-gray-200 appearance-none block w-full bg-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
+            id="text2"
+            rows="7"
+          ></textarea>
+        </div>
+      </div>
+      <div class="flex justify-center gap-3">
+        <button
+          class="btn btn-4 py-2 px-4 rounded-full"
+          style="filter: drop-shadow(0 0 10px #f7fafc)"
+          onclick="showDiff()"
+        >
+          Show Diff
+        </button>
+        <button
+          class="btn btn-4 py-2 px-4 rounded-full"
+          style="filter: drop-shadow(0 0 10px #f7fafc)"
+          onclick="clearDiff()"
+        >
+          Clear
+        </button>
+      </div>
+      <div id="diffOutput" class="mt-10" />
+    </div>
+    <footer>
+      <h6
+        class="text-sm font-bold text-center"
+        style="filter: drop-shadow(0 0 4px #f7fafca9)"
+      >
+        <a href="https://projedefteri.com/en">projedefteri.com</a>
+      </h6>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
